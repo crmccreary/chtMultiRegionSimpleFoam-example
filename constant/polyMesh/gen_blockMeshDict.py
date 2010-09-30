@@ -226,3 +226,21 @@ if __name__ == '__main__':
     for patch in patches:
         print(patch)
     print(");")
+
+    f = open("makeCellSets.setSet", "w")
+    op = "new"
+    for index in [8, 9, 10, 11, 12, 14, 19, 20, 21, 24, 31, 32]:
+         cell = cells[index]
+         f.write("cellSet heatSink %s boxToCell (%s %s %s)(%s %s %s)\n" % (op,
+                                                                           points[cell.connectivity[0]].x/1000,
+                                                                           points[cell.connectivity[0]].y/1000,
+                                                                           points[cell.connectivity[0]].z/1000,
+                                                                           points[cell.connectivity[6]].x/1000,
+                                                                           points[cell.connectivity[6]].y/1000,
+                                                                           points[cell.connectivity[6]].z/1000))
+         op = "add"
+    f.write("cellSet Air clear\n")
+    f.write("cellSet Air add cellToCell heatSink\n")
+    f.write("cellSet Air invert\n")
+    f.close()
+

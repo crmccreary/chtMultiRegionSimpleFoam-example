@@ -1,4 +1,15 @@
-cellSet heatSink new labelToCell (8  9 10 11 12 14 19 20 21 24 30 31 32)
+cellSet heatSink new boxToCell (0.0 0.0 0.0)(0.012 0.01 0.002)
+cellSet heatSink add boxToCell (0.012 0.0 0.0)(0.014 0.01 0.002)
+cellSet heatSink add boxToCell (0.014 0.0 0.0)(0.022 0.01 0.002)
+cellSet heatSink add boxToCell (0.022 0.0 0.0)(0.03 0.01 0.002)
+cellSet heatSink add boxToCell (0.03 0.0 0.0)(0.038 0.01 0.002)
+cellSet heatSink add boxToCell (0.012 0.0 0.002)(0.014 0.01 0.0075)
+cellSet heatSink add boxToCell (0.012 0.0 0.0075)(0.014 0.01 0.015)
+cellSet heatSink add boxToCell (0.014 0.0 0.0075)(0.022 0.01 0.015)
+cellSet heatSink add boxToCell (0.022 0.0 0.0075)(0.03 0.01 0.015)
+cellSet heatSink add boxToCell (0.012 0.0 0.015)(0.014 0.01 0.026)
+cellSet heatSink add boxToCell (0.012 0.0 0.026)(0.014 0.01 0.039)
+cellSet heatSink add boxToCell (0.014 0.0 0.026)(0.022 0.01 0.039)
 cellSet Air clear
 cellSet Air add cellToCell heatSink
 cellSet Air invert
