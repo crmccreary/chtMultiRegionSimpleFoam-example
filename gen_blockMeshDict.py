@@ -1,3 +1,5 @@
+import os
+
 class Point(object):
     next_id = 0
     def __init__(self, 
@@ -122,20 +124,20 @@ if __name__ == '__main__':
             points.append(pnt.translate(z=trans))
     for pnt in points[:]:
         points.append(pnt.translate(y=10.0))
-    nx = {0:100,
-          1:12,
-          2:2,
-          3:8,
-          4:8,
-          5:8,
-          6:100}
-    nz = {0:100,
-          1:2,
-          2:3,
-          3:2,
-          4:3,
-          5:2,
-          6:100}
+    nx = {0:300,
+          1:36,
+          2:6,
+          3:24,
+          4:24,
+          5:24,
+          6:300}
+    nz = {0:300,
+          1:6,
+          2:9,
+          3:6,
+          4:9,
+          5:6,
+          6:300}
     for z_layer in range(7):
         for x_layer in range(7):
             conn = [z_layer*8 + x_layer,
@@ -214,19 +216,45 @@ if __name__ == '__main__':
     patches.append(Patch(type="empty",
                          name = "back",
                          faces = back))
-    print("vertices\n(")
+
+    f = open(os.path.join(".","constant","polyMesh","blockMeshDict"), "w")
+    f.write("/*--------------------------------*- C++ -*----------------------------------*\\" + "\n")
+    f.write(r"| =========                 |                                                 |" + "\n")
+    f.write(r"| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |" + "\n")
+    f.write(r"|  \\    /   O peration     | Version:  1.7.1                                 |" + "\n")
+    f.write(r"|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |" + "\n")
+    f.write(r"|    \\/     M anipulation  |                                                 |" + "\n")
+    f.write(r"\*---------------------------------------------------------------------------*/" + "\n")
+    f.write(r"FoamFile" + "\n")
+    f.write(r"{" + "\n")
+    f.write(r"    version     2.0;" + "\n")
+    f.write(r"    format      ascii;" + "\n")
+    f.write(r"    class       dictionary;" + "\n")
+    f.write(r"    object      blockMeshDict;" + "\n")
+    f.write(r"}" + "\n")
+    f.write(r"// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" + "\n")
+    f.write("\n")
+    f.write("convertToMeters 1;" + "\n")
+
+    f.write("vertices\n(\n")
     for pnt in points:
-        print(pnt)
-    print(");")
-    print("blocks\n(")
+        f.write(str(pnt) + "\n")
+    f.write(");\n")
+    f.write("blocks\n(\n")
     for index, cell in enumerate(cells):
-        print(str(cell) + "// block %s" % (index))
-    print(");")
-    print("edges\n(\n);")
-    print("patches\n(")
+        f.write(str(cell) + "// block %s\n" % (index))
+    f.write(");\n")
+    f.write("edges\n(\n);\n")
+    f.write("patches\n(\n")
     for patch in patches:
-        print(patch)
-    print(");")
+        f.write(str(patch) + "\n")
+    f.write(");\n")
+    f.write("mergePatchPairs\n")
+    f.write("(\n")
+    f.write(");\n")
+    f.write("\n")
+    f.write("// ************************************************************************* //\n")
+    f.close()
 
     f = open("makeCellSets.setSet", "w")
     op = "new"

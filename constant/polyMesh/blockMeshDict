@@ -15,7 +15,6 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 convertToMeters 1;
-
 vertices
 (
     (-0.3048 0.0 -0.3) // Vertex 0
@@ -149,49 +148,49 @@ vertices
 );
 blocks
 (
-    hex ( 0 1 65 64 8 9 73 72  ) (100 1 100) simpleGrading (1 1 1)// block 0
-    hex ( 1 2 66 65 9 10 74 73  ) (12 1 100) simpleGrading (1 1 1)// block 1
-    hex ( 2 3 67 66 10 11 75 74  ) (2 1 100) simpleGrading (1 1 1)// block 2
-    hex ( 3 4 68 67 11 12 76 75  ) (8 1 100) simpleGrading (1 1 1)// block 3
-    hex ( 4 5 69 68 12 13 77 76  ) (8 1 100) simpleGrading (1 1 1)// block 4
-    hex ( 5 6 70 69 13 14 78 77  ) (8 1 100) simpleGrading (1 1 1)// block 5
-    hex ( 6 7 71 70 14 15 79 78  ) (100 1 100) simpleGrading (1 1 1)// block 6
-    hex ( 8 9 73 72 16 17 81 80  ) (100 1 2) simpleGrading (1 1 1)// block 7
-    hex ( 9 10 74 73 17 18 82 81  ) (12 1 2) simpleGrading (1 1 1)// block 8
-    hex ( 10 11 75 74 18 19 83 82  ) (2 1 2) simpleGrading (1 1 1)// block 9
-    hex ( 11 12 76 75 19 20 84 83  ) (8 1 2) simpleGrading (1 1 1)// block 10
-    hex ( 12 13 77 76 20 21 85 84  ) (8 1 2) simpleGrading (1 1 1)// block 11
-    hex ( 13 14 78 77 21 22 86 85  ) (8 1 2) simpleGrading (1 1 1)// block 12
-    hex ( 14 15 79 78 22 23 87 86  ) (100 1 2) simpleGrading (1 1 1)// block 13
-    hex ( 18 19 83 82 26 27 91 90  ) (2 1 3) simpleGrading (1 1 1)// block 14
-    hex ( 19 20 84 83 27 28 92 91  ) (8 1 3) simpleGrading (1 1 1)// block 15
-    hex ( 20 21 85 84 28 29 93 92  ) (8 1 3) simpleGrading (1 1 1)// block 16
-    hex ( 21 22 86 85 29 30 94 93  ) (8 1 3) simpleGrading (1 1 1)// block 17
-    hex ( 22 23 87 86 30 31 95 94  ) (100 1 3) simpleGrading (1 1 1)// block 18
-    hex ( 26 27 91 90 34 35 99 98  ) (2 1 2) simpleGrading (1 1 1)// block 19
-    hex ( 27 28 92 91 35 36 100 99  ) (8 1 2) simpleGrading (1 1 1)// block 20
-    hex ( 28 29 93 92 36 37 101 100  ) (8 1 2) simpleGrading (1 1 1)// block 21
-    hex ( 29 30 94 93 37 38 102 101  ) (8 1 2) simpleGrading (1 1 1)// block 22
-    hex ( 30 31 95 94 38 39 103 102  ) (100 1 2) simpleGrading (1 1 1)// block 23
-    hex ( 34 35 99 98 42 43 107 106  ) (2 1 3) simpleGrading (1 1 1)// block 24
-    hex ( 35 36 100 99 43 44 108 107  ) (8 1 3) simpleGrading (1 1 1)// block 25
-    hex ( 36 37 101 100 44 45 109 108  ) (8 1 3) simpleGrading (1 1 1)// block 26
-    hex ( 37 38 102 101 45 46 110 109  ) (8 1 3) simpleGrading (1 1 1)// block 27
-    hex ( 38 39 103 102 46 47 111 110  ) (100 1 3) simpleGrading (1 1 1)// block 28
-    hex ( 40 41 105 104 48 49 113 112  ) (100 1 2) simpleGrading (1 1 1)// block 29
-    hex ( 41 42 106 105 49 50 114 113  ) (12 1 2) simpleGrading (1 1 1)// block 30
-    hex ( 42 43 107 106 50 51 115 114  ) (2 1 2) simpleGrading (1 1 1)// block 31
-    hex ( 43 44 108 107 51 52 116 115  ) (8 1 2) simpleGrading (1 1 1)// block 32
-    hex ( 44 45 109 108 52 53 117 116  ) (8 1 2) simpleGrading (1 1 1)// block 33
-    hex ( 45 46 110 109 53 54 118 117  ) (8 1 2) simpleGrading (1 1 1)// block 34
-    hex ( 46 47 111 110 54 55 119 118  ) (100 1 2) simpleGrading (1 1 1)// block 35
-    hex ( 48 49 113 112 56 57 121 120  ) (100 1 100) simpleGrading (1 1 1)// block 36
-    hex ( 49 50 114 113 57 58 122 121  ) (12 1 100) simpleGrading (1 1 1)// block 37
-    hex ( 50 51 115 114 58 59 123 122  ) (2 1 100) simpleGrading (1 1 1)// block 38
-    hex ( 51 52 116 115 59 60 124 123  ) (8 1 100) simpleGrading (1 1 1)// block 39
-    hex ( 52 53 117 116 60 61 125 124  ) (8 1 100) simpleGrading (1 1 1)// block 40
-    hex ( 53 54 118 117 61 62 126 125  ) (8 1 100) simpleGrading (1 1 1)// block 41
-    hex ( 54 55 119 118 62 63 127 126  ) (100 1 100) simpleGrading (1 1 1)// block 42
+    hex ( 0 1 65 64 8 9 73 72  ) (300 1 300) simpleGrading (1 1 1)// block 0
+    hex ( 1 2 66 65 9 10 74 73  ) (36 1 300) simpleGrading (1 1 1)// block 1
+    hex ( 2 3 67 66 10 11 75 74  ) (6 1 300) simpleGrading (1 1 1)// block 2
+    hex ( 3 4 68 67 11 12 76 75  ) (24 1 300) simpleGrading (1 1 1)// block 3
+    hex ( 4 5 69 68 12 13 77 76  ) (24 1 300) simpleGrading (1 1 1)// block 4
+    hex ( 5 6 70 69 13 14 78 77  ) (24 1 300) simpleGrading (1 1 1)// block 5
+    hex ( 6 7 71 70 14 15 79 78  ) (300 1 300) simpleGrading (1 1 1)// block 6
+    hex ( 8 9 73 72 16 17 81 80  ) (300 1 6) simpleGrading (1 1 1)// block 7
+    hex ( 9 10 74 73 17 18 82 81  ) (36 1 6) simpleGrading (1 1 1)// block 8
+    hex ( 10 11 75 74 18 19 83 82  ) (6 1 6) simpleGrading (1 1 1)// block 9
+    hex ( 11 12 76 75 19 20 84 83  ) (24 1 6) simpleGrading (1 1 1)// block 10
+    hex ( 12 13 77 76 20 21 85 84  ) (24 1 6) simpleGrading (1 1 1)// block 11
+    hex ( 13 14 78 77 21 22 86 85  ) (24 1 6) simpleGrading (1 1 1)// block 12
+    hex ( 14 15 79 78 22 23 87 86  ) (300 1 6) simpleGrading (1 1 1)// block 13
+    hex ( 18 19 83 82 26 27 91 90  ) (6 1 9) simpleGrading (1 1 1)// block 14
+    hex ( 19 20 84 83 27 28 92 91  ) (24 1 9) simpleGrading (1 1 1)// block 15
+    hex ( 20 21 85 84 28 29 93 92  ) (24 1 9) simpleGrading (1 1 1)// block 16
+    hex ( 21 22 86 85 29 30 94 93  ) (24 1 9) simpleGrading (1 1 1)// block 17
+    hex ( 22 23 87 86 30 31 95 94  ) (300 1 9) simpleGrading (1 1 1)// block 18
+    hex ( 26 27 91 90 34 35 99 98  ) (6 1 6) simpleGrading (1 1 1)// block 19
+    hex ( 27 28 92 91 35 36 100 99  ) (24 1 6) simpleGrading (1 1 1)// block 20
+    hex ( 28 29 93 92 36 37 101 100  ) (24 1 6) simpleGrading (1 1 1)// block 21
+    hex ( 29 30 94 93 37 38 102 101  ) (24 1 6) simpleGrading (1 1 1)// block 22
+    hex ( 30 31 95 94 38 39 103 102  ) (300 1 6) simpleGrading (1 1 1)// block 23
+    hex ( 34 35 99 98 42 43 107 106  ) (6 1 9) simpleGrading (1 1 1)// block 24
+    hex ( 35 36 100 99 43 44 108 107  ) (24 1 9) simpleGrading (1 1 1)// block 25
+    hex ( 36 37 101 100 44 45 109 108  ) (24 1 9) simpleGrading (1 1 1)// block 26
+    hex ( 37 38 102 101 45 46 110 109  ) (24 1 9) simpleGrading (1 1 1)// block 27
+    hex ( 38 39 103 102 46 47 111 110  ) (300 1 9) simpleGrading (1 1 1)// block 28
+    hex ( 40 41 105 104 48 49 113 112  ) (300 1 6) simpleGrading (1 1 1)// block 29
+    hex ( 41 42 106 105 49 50 114 113  ) (36 1 6) simpleGrading (1 1 1)// block 30
+    hex ( 42 43 107 106 50 51 115 114  ) (6 1 6) simpleGrading (1 1 1)// block 31
+    hex ( 43 44 108 107 51 52 116 115  ) (24 1 6) simpleGrading (1 1 1)// block 32
+    hex ( 44 45 109 108 52 53 117 116  ) (24 1 6) simpleGrading (1 1 1)// block 33
+    hex ( 45 46 110 109 53 54 118 117  ) (24 1 6) simpleGrading (1 1 1)// block 34
+    hex ( 46 47 111 110 54 55 119 118  ) (300 1 6) simpleGrading (1 1 1)// block 35
+    hex ( 48 49 113 112 56 57 121 120  ) (300 1 300) simpleGrading (1 1 1)// block 36
+    hex ( 49 50 114 113 57 58 122 121  ) (36 1 300) simpleGrading (1 1 1)// block 37
+    hex ( 50 51 115 114 58 59 123 122  ) (6 1 300) simpleGrading (1 1 1)// block 38
+    hex ( 51 52 116 115 59 60 124 123  ) (24 1 300) simpleGrading (1 1 1)// block 39
+    hex ( 52 53 117 116 60 61 125 124  ) (24 1 300) simpleGrading (1 1 1)// block 40
+    hex ( 53 54 118 117 61 62 126 125  ) (24 1 300) simpleGrading (1 1 1)// block 41
+    hex ( 54 55 119 118 62 63 127 126  ) (300 1 300) simpleGrading (1 1 1)// block 42
 );
 edges
 (
