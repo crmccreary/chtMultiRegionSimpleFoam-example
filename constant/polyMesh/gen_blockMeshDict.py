@@ -198,6 +198,12 @@ if __name__ == '__main__':
                          faces = [cells[14].f5,
                                   cells[19].f5,
                                   cells[24].f5]))
+    patches.append(Patch(type="patch",
+                         name = "adiabatic",
+                         faces = [cells[8].f5,
+                         faces = [cells[8].f1,
+                         faces = [cells[30].f0,
+                         faces = [cells[30].f5]))
     front = []
     back = []
     for cell in cells:
