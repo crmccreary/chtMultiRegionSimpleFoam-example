@@ -1,4 +1,6 @@
-set title "Residuals"
-set ylabel 'Residual'
+set title "Total Heat from Interface"
+set ylabel 'W'
 set xlabel 'Iteration'
 plot "< cat log.chtMultiRegionSimpleFoam | grep 'Air:Air_to_heatSink:T <' | cut -d' ' -f5 | cut -d':' -f2 | tr -d ','" title 'T' with lines
+pause 1
+reread

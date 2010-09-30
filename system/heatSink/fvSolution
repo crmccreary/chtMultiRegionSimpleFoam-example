@@ -28,7 +28,7 @@ solvers
 SIMPLE
 {
     nNonOrthogonalCorrectors 0;
-    convergence 0.001;
+    convergence 0.0;
 }
 
 relaxationFactors
