@@ -124,20 +124,34 @@ if __name__ == '__main__':
             points.append(pnt.translate(z=trans))
     for pnt in points[:]:
         points.append(pnt.translate(y=10.0))
-    nx = {0:300,
+    nx = {0:100,
           1:36,
           2:6,
           3:24,
           4:24,
           5:24,
-          6:300}
-    nz = {0:300,
+          6:100}
+    nz = {0:100,
           1:6,
           2:9,
           3:6,
           4:9,
           5:6,
-          6:300}
+          6:100}
+    gx = {0:0.1,
+          1:1,
+          2:1,
+          3:1,
+          4:1,
+          5:1,
+          6:10}
+    gz = {0:0.1,
+          1:1,
+          2:1,
+          3:1,
+          4:1,
+          5:1,
+          6:10}
     for z_layer in range(7):
         for x_layer in range(7):
             conn = [z_layer*8 + x_layer,
@@ -148,7 +162,12 @@ if __name__ == '__main__':
                     (z_layer + 1)*8 + 1 + x_layer,
                     (z_layer + 1)*8 + 1 + 64 + x_layer,
                     (z_layer + 1)*8 + 64 + x_layer]
-            cell = Cell(conn, nx[x_layer], 1, nz[z_layer])
+            cell = Cell(conn, 
+                        nx[x_layer], 
+                        1, 
+                        nz[z_layer], 
+                        grad_x = gx[x_layer], 
+                        grad_z = gz[z_layer])
             cells.append(cell)
     # Delete the adiabatic blocks
     del cells[29]
