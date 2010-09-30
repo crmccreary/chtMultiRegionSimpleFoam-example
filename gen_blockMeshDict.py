@@ -113,10 +113,10 @@ if __name__ == '__main__':
             Point(0, 0, -300),
             Point(12, 0, -300),
             Point(14, 0, -300),
-            Point(22, 0, -300),
-            Point(30, 0, -300),
-            Point(38, 0, -300),
-            Point(338, 0, -300)]
+            Point(20, 0, -300),
+            Point(26, 0, -300),
+            Point(32, 0, -300),
+            Point(332, 0, -300)]
     points.extend(pnts)
     for z_coord in [0,2,5.5,7.5,11.,13.,313]:
         trans =  300 + z_coord 
