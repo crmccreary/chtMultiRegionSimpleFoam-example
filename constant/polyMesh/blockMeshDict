@@ -258,10 +258,8 @@ patches
 
     patch adiabatic
     (
-        (9 17 81 73 )
         (17 18 82 81 )
         (41 105 106 42 )
-        (41 49 113 105 )
     )
 
     empty front
@@ -359,7 +357,6 @@ patches
     )
 
 );
-
 mergePatchPairs
 (
 );
