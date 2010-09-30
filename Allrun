@@ -37,7 +37,7 @@ do
 done
 #
 ## Run
-runParallel chtMultiRegionSimpleFoam 6
+runParallel chtMultiRegionSimpleFoam 7
 #
 ## Reconstruct
 for i in Air heatSink
