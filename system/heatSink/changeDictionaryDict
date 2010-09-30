@@ -42,6 +42,12 @@ dictionaryReplacement
                type            fixedValue;
                value           uniform 350;
             }
+            adiabatic
+            {
+               type            fixedGradient;
+               gradient        uniform 0;
+               value           uniform 0;
+            }
         }
     }
 
