@@ -10,27 +10,27 @@ rm -rf constant/polyMesh/sets
 runApplication blockMesh
 runApplication setSet -batch makeCellSets.setSet
 
-#rm -f constant/polyMesh/sets/*_old
+rm -f constant/polyMesh/sets/*_old
 
-#runApplication setsToZones -noFlipMap
-#runApplication splitMeshRegions -cellZones -overwrite
+runApplication setsToZones -noFlipMap
+runApplication splitMeshRegions -cellZones -overwrite
 
-#echo "remove fluid fields from solid regions (important for post-processing)"
-#rm -f 0*/heatSink/{mut,alphat,epsilon,k,p_rgh,p,U}
+echo "remove fluid fields from solid regions (important for post-processing)"
+rm -f 0*/heatSink/{mut,alphat,epsilon,k,p_rgh,p,U}
 
-#echo "remove solid fields from fluid regions (important for post-processing)"
-#rm -f 0*/Air/{cp,K,rho}
+echo "remove solid fields from fluid regions (important for post-processing)"
+rm -f 0*/Air/{cp,K,rho}
 
-#for i in heatSink Air
-#do
-#   changeDictionary -region $i > log.changeDictionary.$i 2>&1
-#done
+for i in heatSink Air
+do
+   changeDictionary -region $i > log.changeDictionary.$i 2>&1
+done
 
 
 ##-- Run on single processor
 #runApplication chtMultiRegionSimpleFoam
 #
-## Decompose
+# Decompose
 #for i in Air
 #do
 #   decomposePar -region $i > log.decomposePar.$i 2>&1

@@ -116,9 +116,10 @@ if __name__ == '__main__':
             Point(38, 0, -300),
             Point(338, 0, -300)]
     points.extend(pnts)
-    for z_coord in [300, 302, 307.5, 315, 326, 339, 639]:
+    for z_coord in [0,2,5.5,7.5,11.,13.,313]:
+        trans =  300 + z_coord 
         for pnt in pnts[:]:
-            points.append(pnt.translate(z=z_coord))
+            points.append(pnt.translate(z=trans))
     for pnt in points[:]:
         points.append(pnt.translate(y=10.0))
     nx = {0:100,
