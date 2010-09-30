@@ -1,0 +1,4 @@
+cellSet heatSink new labelToCell (8  9 10 11 12 14 19 20 21 24 30 31 32)
+cellSet Air clear
+cellSet Air add cellToCell heatSink
+cellSet Air invert

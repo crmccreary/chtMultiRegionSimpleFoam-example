@@ -1,0 +1,202 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.7.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dictionaryReplacement
+{
+    U
+    {
+        internalField   uniform (0.0 0.0 0.01);
+
+        boundaryField
+        {
+            left
+            {
+                type            symmetryPlane;
+            }
+            bottom
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+            "Air_to_.*"
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+            top
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+            right
+            {
+                type            inletOutlet;
+                inletValue      uniform ( 0 0 0 );
+                value           uniform ( -0.01 0 0 );
+            }
+            inlet
+            {
+                type            inletOutlet;
+                inletValue      uniform ( 0 0 0 );
+                value           uniform ( 0 0 0.01 );
+            }
+            outlet
+            {
+                type            inletOutlet;
+                inletValue      uniform ( 0 0 0 );
+                value           uniform ( 0 0 0.01 );
+            }
+
+        }
+    }
+
+    T
+    {
+        internalField   uniform 300;
+
+        boundaryField
+        {
+            left
+            {
+                type            symmetryPlane;
+            }
+            bottom
+            {
+                type            fixedValue;
+                value           uniform 300;
+            }
+            top
+            {
+                type            fixedValue;
+                value           uniform 300;
+            }
+            right
+            {
+                type            inletOutlet;
+                inletValue      uniform 300;
+                value           uniform 300;
+            }
+            inlet
+            {
+                type            inletOutlet;
+                inletValue      uniform 300;
+                value           uniform 300;
+            }
+            outlet
+            {
+                type            inletOutlet;
+                inletValue      uniform 300;
+                value           uniform 300;
+            }
+
+            "Air_to_.*"
+            {
+                type            compressible::turbulentTemperatureCoupledBaffle;
+                neighbourFieldName T;
+                K               K;
+                value           uniform 300;
+            }
+        }
+    }
+
+    p_rgh
+    {
+        internalField   uniform 1e5;
+
+        boundaryField
+        {
+            left
+            {
+                type            symmetryPlane;
+            }
+            bottom
+            {
+                type            buoyantPressure;
+                value           uniform 1.0e5;
+            }
+            top
+            {
+                type            buoyantPressure;
+                value           uniform 1.0e5;
+            }
+            right
+            {
+                type            fixedValue;
+                value           uniform 1.0e5;
+            }
+            inlet
+            {
+                type            fixedValue;
+                value           uniform 1.0e5;
+            }
+            outlet
+            {
+                type            buoyantPressure;
+                value           uniform 1.0e5;
+            }
+            "Air_to_.*"
+            {
+                type            buoyantPressure;
+                value           uniform 1.0e5;
+            }
+        }
+    }
+
+    p
+    {
+        internalField   uniform 1e5;
+
+        boundaryField
+        {
+            left
+            {
+                type            symmetryPlane;
+            }
+            bottom
+            {
+                type            calculated;
+                value           uniform 1.0e5;
+            }
+            top
+            {
+                type            calculated;
+                value           uniform 1.0e5;
+            }
+            right
+            {
+                type            calculated;
+                value           uniform 1.0e5;
+            }
+            inlet
+            {
+                type            calculated;
+                value           uniform 1.0e5;
+            }
+            outlet
+            {
+                type            calculated;
+                value           uniform 1e5;
+            }
+            "Air_to_.*"
+            {
+                type            calculated;
+                value           uniform 1.0e5;
+            }
+        }
+    }
+}
+
+// ************************************************************************* //

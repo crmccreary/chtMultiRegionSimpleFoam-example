@@ -1,0 +1,6 @@
+set title "Residuals"
+set ylabel 'Residual'
+set xlabel 'Iteration'
+plot "< cat log.chtMultiRegionSimpleFoam | grep 'Min/max T' | cut -d' ' -f3 | tr -d ','" title 'T' with lines
+pause 1
+reread
