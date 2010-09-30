@@ -230,7 +230,7 @@ if __name__ == '__main__':
 
     f = open("makeCellSets.setSet", "w")
     op = "new"
-    for index in [8, 9, 10, 11, 12, 14, 19, 20, 21, 24, 31, 32]:
+    for index in [8, 9, 10, 11, 12, 14, 19, 20, 21, 24, 30, 31, 32]:
          cell = cells[index]
          f.write("cellSet heatSink %s boxToCell (%s %s %s)(%s %s %s)\n" % (op,
                                                                            points[cell.connectivity[0]].x/1000,

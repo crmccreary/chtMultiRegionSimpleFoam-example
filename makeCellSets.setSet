@@ -8,6 +8,7 @@ cellSet heatSink add boxToCell (0.012 0.0 0.0055)(0.014 0.01 0.0075)
 cellSet heatSink add boxToCell (0.014 0.0 0.0055)(0.022 0.01 0.0075)
 cellSet heatSink add boxToCell (0.022 0.0 0.0055)(0.03 0.01 0.0075)
 cellSet heatSink add boxToCell (0.012 0.0 0.0075)(0.014 0.01 0.011)
+cellSet heatSink add boxToCell (0.0 0.0 0.011)(0.012 0.01 0.013)
 cellSet heatSink add boxToCell (0.012 0.0 0.011)(0.014 0.01 0.013)
 cellSet heatSink add boxToCell (0.014 0.0 0.011)(0.022 0.01 0.013)
 cellSet Air clear
