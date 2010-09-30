@@ -31,16 +31,16 @@ done
 #runApplication chtMultiRegionSimpleFoam
 #
 # Decompose
-for i in Air heatSink
+for i in Air
 do
    decomposePar -region $i > log.decomposePar.$i 2>&1
 done
 
 # Run
-runParallel chtMultiRegionSimpleFoam 4
+runParallel chtMultiRegionSimpleFoam 6
 
 # Reconstruct
-for i in Air heatSink
+for i in Air
 do
    reconstructPar -region $i > log.reconstructPar.$i 2>&1
 done
