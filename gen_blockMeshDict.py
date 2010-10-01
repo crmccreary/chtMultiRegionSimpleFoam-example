@@ -118,7 +118,7 @@ if __name__ == '__main__':
             Point(32, 0, -300),
             Point(332, 0, -300)]
     points.extend(pnts)
-    for z_coord in [0,2,5.5,7.5,11.,13.,313]:
+    for z_coord in [0,2,5.5,7.5,11.,13.,23]:
         trans =  300 + z_coord 
         for pnt in pnts[:]:
             points.append(pnt.translate(z=trans))
@@ -137,7 +137,7 @@ if __name__ == '__main__':
           3:6,
           4:9,
           5:6,
-          6:100}
+          6:20}
     gx = {0:0.1,
           1:1,
           2:1,
@@ -200,8 +200,8 @@ if __name__ == '__main__':
                                   cells[4].f0,
                                   cells[5].f0,
                                   cells[6].f0]))
-    patches.append(Patch(type="patch",
-                         name = "outlet",
+    patches.append(Patch(type="wall",
+                         name = "ceiling",
                          faces = [cells[36].f1,
                                   cells[37].f1,
                                   cells[38].f1,

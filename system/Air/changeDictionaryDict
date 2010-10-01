@@ -53,11 +53,10 @@ dictionaryReplacement
                 inletValue      uniform ( 0 0 0 );
                 value           uniform ( 0 0 0.01 );
             }
-            outlet
+            ceiling
             {
-                type            inletOutlet;
-                inletValue      uniform ( 0 0 0 );
-                value           uniform ( 0 0 0.01 );
+                type            fixedValue;
+                value           uniform (0 0 0);
             }
 
         }
@@ -95,10 +94,9 @@ dictionaryReplacement
                 inletValue      uniform 300;
                 value           uniform 300;
             }
-            outlet
+            ceiling
             {
-                type            inletOutlet;
-                inletValue      uniform 300;
+                type            fixedValue;
                 value           uniform 300;
             }
 
@@ -142,7 +140,7 @@ dictionaryReplacement
                 type            fixedValue;
                 value           uniform 1.0e5;
             }
-            outlet
+            ceiling
             {
                 type            buoyantPressure;
                 value           uniform 1.0e5;
@@ -185,7 +183,7 @@ dictionaryReplacement
                 type            calculated;
                 value           uniform 1.0e5;
             }
-            outlet
+            ceiling
             {
                 type            calculated;
                 value           uniform 1e5;
