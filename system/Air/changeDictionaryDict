@@ -45,7 +45,7 @@ dictionaryReplacement
             {
                 type            inletOutlet;
                 inletValue      uniform ( 0 0 0 );
-                value           uniform ( -0.01 0 0 );
+                value           uniform ( 0.01 0 0 );
             }
             inlet
             {
@@ -105,7 +105,7 @@ dictionaryReplacement
                 type            compressible::turbulentTemperatureCoupledBaffle;
                 neighbourFieldName T;
                 K               K;
-                value           uniform 300;
+                value           uniform 340;
             }
         }
     }
@@ -132,12 +132,12 @@ dictionaryReplacement
             }
             right
             {
-                type            fixedValue;
+                type            buoyantPressure;
                 value           uniform 1.0e5;
             }
             inlet
             {
-                type            fixedValue;
+                type            buoyantPressure;
                 value           uniform 1.0e5;
             }
             ceiling

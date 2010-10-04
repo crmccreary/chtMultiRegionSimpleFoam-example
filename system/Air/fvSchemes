@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  1.7.1                                 |
+|  \\    /   O peration     | Version:  1.7.0                                 |
 |   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -16,7 +16,7 @@ FoamFile
 
 ddtSchemes
 {
-    default steadyState;
+    default Euler;
 }
 
 gradSchemes
@@ -28,13 +28,13 @@ divSchemes
 {
     default         none;
     div(phi,U)      Gauss upwind;
+    div(phiU,p)     Gauss linear;
     div(phi,h)      Gauss upwind;
     div(phi,k)      Gauss upwind;
     div(phi,epsilon) Gauss upwind;
     div(phi,R)      Gauss upwind;
     div(R)          Gauss linear;
     div((muEff*dev2(grad(U).T()))) Gauss linear;
-    div(U,p)        Gauss upwind;
 }
 
 laplacianSchemes

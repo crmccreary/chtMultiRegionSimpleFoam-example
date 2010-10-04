@@ -2,10 +2,9 @@ set logscale y
 set title "Residuals"
 set ylabel 'Residual'
 set xlabel 'Iteration'
-plot "< cat log.chtMultiRegionSimpleFoam | grep 'Solving for Ux' | cut -d' ' -f9 | tr -d ','" title 'Ux' with lines,\
-"< cat log.chtMultiRegionSimpleFoam | grep 'Solving for Uz' | cut -d' ' -f9 | tr -d ','" title 'Uz' with lines,\
-"< cat log.chtMultiRegionSimpleFoam | grep 'Solving for h' | cut -d' ' -f9 | tr -d ','" title 'h' with lines,\
-"< cat log.chtMultiRegionSimpleFoam | grep 'Solving for p_rgh' | cut -d' ' -f9 | tr -d ','" title 'p_rgh' with lines,\
-"< cat log.chtMultiRegionSimpleFoam | grep 'Solving for T' | cut -d' ' -f9 | tr -d ','" title 'T' with lines
+plot "< cat log.chtMultiRegionFoam | grep 'Solving for Ux' | cut -d' ' -f9 | tr -d ','" title 'Ux' with lines,\
+"< cat log.chtMultiRegionFoam | grep 'Solving for Uz' | cut -d' ' -f9 | tr -d ','" title 'Uz' with lines,\
+"< cat log.chtMultiRegionFoam | grep 'Solving for h' | cut -d' ' -f9 | tr -d ','" title 'h' with lines,\
+"< cat log.chtMultiRegionFoam | grep 'Solving for p_rgh' | cut -d' ' -f9 | tr -d ','" title 'p_rgh' with lines
 pause 1
 reread

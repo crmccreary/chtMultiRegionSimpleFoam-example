@@ -39,14 +39,16 @@ dictionaryReplacement
             }
             applied
             {
-               type            fixedValue;
-               value           uniform 345;
+                type            fixedValue;
+                value           uniform 345;
+
+               //type            fixedGradient;
+               //gradient        uniform 12.6;
             }
             adiabatic
             {
-               type            fixedGradient;
-               gradient        uniform 0;
-               value           uniform 0;
+               type            zeroGradient;
+               value           uniform 340;
             }
         }
     }

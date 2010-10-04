@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  1.7.1                                 |
+|  \\    /   O peration     | Version:  1.7.0                                 |
 |   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -38,35 +38,91 @@ solvers
         mergeLevels      1;
     }
 
-    "(U|h|k|epsilon)"
+    p_rghFinal
+    {
+        solver           GAMG;
+        tolerance        1e-7;
+        relTol           0;
+
+        smoother         GaussSeidel;
+
+        cacheAgglomeration true;
+        nCellsInCoarsestLevel 10;
+        agglomerator     faceAreaPair;
+        mergeLevels      1;
+    }
+
+    U
+    {
+        solver           PBiCG;
+        preconditioner   DILU;
+        tolerance        1e-7;
+        relTol           0;
+    }
+
+    h
     {
         solver           PBiCG;
         preconditioner   DILU;
         tolerance        1e-7;
         relTol           0.1;
     }
+
+    hFinal
+    {
+        solver           PBiCG;
+        preconditioner   DILU;
+        tolerance        1e-7;
+        relTol           0;
+    }
+
+    k
+    {
+        solver           PBiCG;
+        preconditioner   DILU;
+        tolerance        1e-7;
+        relTol           0;
+    }
+
+    epsilon
+    {
+        solver           PBiCG;
+        preconditioner   DILU;
+        tolerance        1e-7;
+        relTol           0;
+    }
+
+    R
+    {
+        solver           PBiCG;
+        preconditioner   DILU;
+        tolerance        1e-7;
+        relTol           0;
+    }
 }
 
-SIMPLE
+PISO
 {
+    momentumPredictor    off;
+    nOuterCorrectors     1;
+    nCorrectors          2;
+    nNonOrthogonalCorrectors 1;
+    pRefPoint            (-0.081 -0.0257 8.01);
+    pRefValue            1e5;
+}
+
+PIMPLE
+{
+    momentumPredictor   on;
+    nCorrectors         2;
     nNonOrthogonalCorrectors 0;
-    pRefCell                0;
-    pRefValue               100000;
-    rhoMin      rhoMin [1 -3 0 0 0] 0.2;
-    rhoMax      rhoMax [1 -3 0 0 0] 2;
-    convergence 0.0005;
 }
 
 relaxationFactors
 {
-    rho         1;
-    p_rgh       0.7;
-    U           0.3;
-    h           0.7;
-    nuTilda     0.7;
-    k           0.7;
-    epsilon     0.7;
-    omega       0.7;
+    h               1;
+    U               1;
 }
+
 
 // ************************************************************************* //

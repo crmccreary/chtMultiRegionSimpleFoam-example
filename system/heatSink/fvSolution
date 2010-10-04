@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  1.7.1                                 |
+|  \\    /   O peration     | Version:  1.7.0                                 |
 |   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -20,20 +20,24 @@ solvers
     {
         solver           PCG;
         preconditioner   DIC;
-        tolerance        1e-06;
+        tolerance        1E-06;
         relTol           0;
-    }
+    };
 }
 
-SIMPLE
+PISO
 {
-    nNonOrthogonalCorrectors 0;
-    convergence 0.0;
+    nNonOrthogonalCorrectors 1;
 }
 
-relaxationFactors
+PIMPLE
 {
-    T           0.9;
+    nNonOrthogonalCorrectors 1;
+}
+
+SolidRegionSubCycleControl
+{
+    maxDeltaTForSolidRegion 1E-4;
 }
 
 // ************************************************************************* //

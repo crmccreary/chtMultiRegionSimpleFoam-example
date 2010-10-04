@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  1.7.1                                 |
+|  \\    /   O peration     | Version:  1.7.0                                 |
 |   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -16,7 +16,7 @@ FoamFile
 
 ddtSchemes
 {
-    default steadyState;
+    default Euler;
 }
 
 gradSchemes
@@ -48,7 +48,6 @@ snGradSchemes
 fluxRequired
 {
     default         no;
-    T;
 }
 
 // ************************************************************************* //
