@@ -54,7 +54,7 @@ SIMPLE
     pRefValue               100000;
     rhoMin      rhoMin [1 -3 0 0 0] 0.2;
     rhoMax      rhoMax [1 -3 0 0 0] 2;
-    convergence 0.0010;
+    convergence 0.0005;
 }
 
 relaxationFactors
