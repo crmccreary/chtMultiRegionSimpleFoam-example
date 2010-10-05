@@ -40,7 +40,7 @@ dictionaryReplacement
             applied
             {
                type            fixedValue;
-               value           uniform 340;
+               value           uniform 350;
             }
             adiabatic
             {
