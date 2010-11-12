@@ -104,7 +104,7 @@ dictionaryReplacement
 
             "Air_to_.*"
             {
-                type            compressible::turbulentTemperatureCoupledBaffle;
+                type            solidWallMixedTemperatureCoupled;
                 neighbourFieldName T;
                 K               K;
                 value           uniform 300;

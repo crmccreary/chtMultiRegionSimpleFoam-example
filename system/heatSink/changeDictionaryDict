@@ -32,15 +32,26 @@ dictionaryReplacement
         {
             "heatSink_to_.*"
             {
-                type            compressible::turbulentTemperatureCoupledBaffle;
-                neighbourFieldName T;
-                K               K;
-                value           uniform 300;
+                //type            compressible::turbulentTemperatureCoupledBaffle;
+                //neighbourFieldName T;
+                //K               K;
+                //value           uniform 300;
+               type                solidWallMixedTemperatureCoupled;
+               neighbourFieldName  T;
+               K                   K;
+               value               uniform 300;
+
             }
             applied
             {
-               type            fixedValue;
-               value           uniform 350;
+               //type            fixedValue;
+               //value           uniform 350;
+               type            solidWallHeatFluxTemperature;
+               K               K;                  // Name of K field
+               q               uniform 2220.7;     // Heat flux / [W/m2] 0.2 W over 9 mm x 10 mm
+               value           uniform 300.0;      // Initial temperature / [K]
+               gradient        uniform 0.0;        // Initial gradient / [K/m]
+
             }
             adiabatic
             {

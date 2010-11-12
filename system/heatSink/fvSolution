@@ -38,6 +38,7 @@ relaxationFactors
 
 SolidRegionSubCycleControl
 {
+    nTSubCycles 50;
 }
 
 // ************************************************************************* //
